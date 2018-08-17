@@ -96,7 +96,7 @@ spec:
     spec:
       containers:
       - name: game
-        image: gcr.io/dockyard-ui-demo/whackapod-game@sha256:002c2f211f96155812d7c855040f9a289f6770f04e6537cd8755108e63098469
+        image: gcr.io/dockyard-ui-demo/whackapod-game@sha256:e718deeeabe2525b563e7dda80ed28491a11756842e387e7de7a0ad4794d769e
         livenessProbe:
           httpGet:
             path: /healthz

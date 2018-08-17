@@ -240,7 +240,7 @@ th.terminating{
     -webkit-animation-name: orangeTextPulse;
     -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
-}    
+}
 
 .modal{
     min-height: 100%;
@@ -320,7 +320,7 @@ code{
     position: absolute;
     width: 620px;
     right: 20px;
-    top: 110px; 
+    top: 110px;
 
 }
 
@@ -351,7 +351,7 @@ code{
     font-weight: 900;
     font-size: 1.3rem;
     padding: 20px;
-    
+
 }
 
 
@@ -372,7 +372,7 @@ code{
     border: 1px solid mediumslateblue;
     overflow: hidden;
     font-size: .5rem;
-}    
+}
 
 pre{
     font-family: 'Source Code Pro', monospace;
@@ -459,7 +459,6 @@ button.small.reset{
     border-radius: 5px;
     position: relative;
     margin-bottom: 5px;
-    width: 45%;
     display: inline-block;
     vertical-align: top;
     margin-right: 20px;
@@ -492,7 +491,7 @@ button.small.reset{
     top: -230px;
     height: 160px;
     width: 92%;
-    margin-bottom: -220px; 
+    margin-bottom: -220px;
 
 }
 
@@ -557,7 +556,7 @@ nav a{
     border: 1px solid #ccc;
     background-color: #333;
     padding: 3px 10px;
-    color: #FFF; 
+    color: #FFF;
 }
 
 #deployment{
