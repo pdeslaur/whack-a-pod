@@ -47,7 +47,7 @@ spec:
       serviceAccountName: wap-admin-serviceaccount
       containers:
       - name: admin
-        image: gcr.io/dockyard-ui-demo/whackapod-admin@sha256:15d476adf1afa5e0c992bb1510d9ee3605cfea0e99557c41a7ff8d1590668eb8
+        image: gcr.io/dockyard-ui-demo/whackapod-admin@sha256:6c7a55accc266dd91eec070a976fe620cb2acf2be5396128c97429d2bd6ee5b7
         env:
         - name: APIIMAGE
           value: gcr.io/dockyard-ui-demo/whackapod-api@sha256:52e1c6700f79167f96c4dd37496fef56cc02f8f865ce4d489b3c4d68d22a3124

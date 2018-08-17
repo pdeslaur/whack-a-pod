@@ -83,7 +83,7 @@ func deletePod(podname string) ([]byte, error) {
 }
 
 func deletePods(node string) ([]byte, error) {
-	url := root + "/api/v1/namespaces/default/pods" + "?labelSelector=" + selector
+	url := root + "/api/v1/namespaces/wap-gcb/pods" + "?labelSelector=" + selector
 	if len(node) > 0 {
 		fs := "&fieldSelector=spec.nodeName=" + node
 		url += fs
@@ -142,7 +142,7 @@ func toggleNode(nodename string, inactive bool) ([]byte, error) {
 }
 
 func deleteReplicaSet() ([]byte, error) {
-	url := root + "/apis/extensions/v1beta1/namespaces/default/replicasets" + "?labelSelector=" + selector
+	url := root + "/apis/extensions/v1beta1/namespaces/wap-gcb/replicasets" + "?labelSelector=" + selector
 
 	b, status, err := queryK8sAPI(url, "DELETE", nil)
 	if err != nil {
@@ -163,7 +163,6 @@ type minimumDeployment struct {
 	Kind       string `json:"kind,omitempty"`
 	Metadata   struct {
 		Name string `json:"name,omitempty"`
-		Namespace string `json:"namespace,omitempty"`
 	} `json:"metadata,omitempty"`
 	Spec struct {
 		Replicas int `json:"replicas,omitempty"`
@@ -199,7 +198,7 @@ type minimumPort struct {
 }
 
 func createDeployment() ([]byte, error) {
-	selflink := "/apis/extensions/v1beta1/namespaces/default/deployments"
+	selflink := "/apis/extensions/v1beta1/namespaces/wap-gcb/deployments"
 	url := root + selflink
 
 	image := os.Getenv("APIIMAGE")
@@ -216,7 +215,6 @@ func createDeployment() ([]byte, error) {
 	d.APIVersion = "extensions/v1beta1"
 	d.Kind = "Deployment"
 	d.Metadata.Name = "api-deployment"
-	d.Metadata.Namespace = "wap-gcb"
 	d.Spec.Replicas = 12
 	d.Spec.Selector.MatchLabels = map[string]string{"app": "api"}
 	d.Spec.Strategy.Type = "RollingUpdate"
@@ -261,7 +259,7 @@ func createDeployment() ([]byte, error) {
 }
 
 func deleteDeployment(depname string) ([]byte, error) {
-	selflink := "/apis/extensions/v1beta1/namespaces/default/deployments/" + depname
+	selflink := "/apis/extensions/v1beta1/namespaces/wap-gcb/deployments/" + depname
 	url := root + selflink
 
 	b, status, err := queryK8sAPI(url, "DELETE", nil)
