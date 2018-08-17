@@ -224,3 +224,4 @@ func sendJSON(w http.ResponseWriter, content string, status int) {
 	w.WriteHeader(status)
 	fmt.Fprint(w, content)
 }
+
