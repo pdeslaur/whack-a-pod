@@ -1,18 +1,72 @@
-.DS_Store
-Makefile.properties
-Makefile.jp.properties
-Makefile.us.properties
-apps/game/kubernetes/game-deployment.yaml
-apps/game/containers/default/assets/js/config.js
-apps/admin/kubernetes/admin-deployment.yaml
-apps/api/kubernetes/api-deployment.yaml
+# Created by https://www.gitignore.io/api/osx,linux,windows
 
-/Makefile.au.properties
-/Makefile.us.old.properties
-/Makefile.eu.properties
-/Makefile.sg.properties
-/apps/ingress/ingress.yaml
-/apps/admin/containers/main
-/apps/api/containers/main
-/Makefile.de.properties
-Makefile.uk.properties
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### OSX ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# End of https://www.gitignore.io/api/osx,linux,windows
