@@ -47,7 +47,7 @@ spec:
       serviceAccountName: wap-admin-serviceaccount
       containers:
       - name: admin
-        image: gcr.io/dockyard-ui-demo/whackapod-admin@sha256:0af606bd7be06f65347be9ef81c56abdd1b81f440d139b3baab773b1c75f018b
+        image: gcr.io/dockyard-ui-demo/whackapod-admin@sha256:2da31796d8df3dc2a6205af0d5e8c33519f989ffbffb80b1d059ef4024adb2f9
         env:
         - name: APIIMAGE
           value: gcr.io/dockyard-ui-demo/whackapod-api@sha256:52e1c6700f79167f96c4dd37496fef56cc02f8f865ce4d489b3c4d68d22a3124
@@ -121,37 +121,7 @@ spec:
   - protocol: TCP
     port: 8080
     targetPort: 8080
----
 
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: api
-  labels:
-    app: api
-  namespace: wap-gcb
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: api
-  template:
-    metadata:
-      labels:
-        app: api
-    spec:
-      containers:
-      - name: api
-        image: gcr.io/dockyard-ui-demo/whackapod-api@sha256:52e1c6700f79167f96c4dd37496fef56cc02f8f865ce4d489b3c4d68d22a3124
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-            scheme: HTTP
-          initialDelaySeconds: 30
-          timeoutSeconds: 5
-        ports:
-        - containerPort: 8080
 ---
 
 kind: Service
