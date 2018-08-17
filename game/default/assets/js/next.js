@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-var default_duration = 40; 
+var default_duration = 40;
 
 // These are set in config.js, and are specific to your cluster setup
 var api = new API(servicehost);
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function setReport(msg, color){
     if (typeof color == "undefined") color = "#333333";
     var report = $(".report");
-    
+
     report.css("-webkit-filter", "drop-shadow(2px 2px 3px " + color + ")");
     report.css("color", color);
     var msgholder = $("#report_message");
@@ -66,8 +66,8 @@ function setReport(msg, color){
             $(".report").addClass("service_up");
             $(".report").removeClass("service_down");
         }
-    } 
-    
+    }
+
 }
 
 function endDeployment(){
@@ -89,17 +89,18 @@ function showTotals(){
 }
 
 function startDeployment(){
-    deploymentAPI.Create(initGame,genericError);
+    //deploymentAPI.Create(initGame,genericError);
+    initGame();
     hideModal("#start-modal");
     $(".pods-explain").fadeIn();
-    
+
     setReport("");
 }
 
 function initGame(e){
     game.Start(getColor, showScore, getPods, getTimeLeft);
     logwindow.Log(e);
-    
+
 }
 
 function getColor(){
@@ -131,8 +132,8 @@ function handleColor(e){
         api.fails = 0;
         console.log("Soft service has recovered.");
     }
-    
-    
+
+
 }
 
 function handleColorError(e,textStatus, errorThrown){
@@ -145,7 +146,7 @@ function handleColorError(e,textStatus, errorThrown){
             console.log("Soft service fail. Retry");
             api.fails++;
         }
-        
+
     }
 
 }
@@ -193,8 +194,8 @@ function whackHandler(e){
     } else{
         $("#" + e.target.id ).addClass("terminating");
     }
-    
-   
+
+
     killPod(e.target.dataset.selflink)
 }
 

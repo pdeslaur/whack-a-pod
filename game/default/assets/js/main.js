@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-var default_duration = 40; 
+var default_duration = 40;
 
 // These are set in config.js, and are specific to your cluster setup
 var api = new API(servicehost);
@@ -62,7 +62,7 @@ function showTotals(){
 }
 
 function startDeployment(){
-    deploymentAPI.Create(initGame,genericError);
+    //deploymentAPI.Create(initGame,genericError);
     hideModal("#start-modal");
     setReport("Kubernetes starting up.");
 }
@@ -95,7 +95,7 @@ function handleColor(e){
         game.SetServiceUp();
         setReport("Kubernetes service is UP!", e);
     }
-    
+
 }
 
 function handleColorError(e,textStatus, errorThrown){

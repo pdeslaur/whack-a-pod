@@ -371,7 +371,7 @@ function API(hostname){
         if (this.fails != 0){
             this.fails = 0;
             return true;
-        } 
+        }
         return false;
     };
 
@@ -435,8 +435,8 @@ function DEPLOYMENTAPI(hostname, logwindow){
             console.log("Item not found which in most cases is expected.");
         } else{
             console.log("Failure: " , e);
-        } 
-        
+        }
+
     };
 
     var ajaxProxy = function(url) {
@@ -454,7 +454,7 @@ function DEPLOYMENTAPI(hostname, logwindow){
     };
 
     this.Delete = function(){
-        ajaxProxy(getDeleteURI());
+        //ajaxProxy(getDeleteURI());
     };
 
     this.DeletePod = function(pod, successHandler, errorHandler){
@@ -743,7 +743,7 @@ function BOMBUI(waitingimg, explodeimg){
 
 function PODLIST(json){
     this.selflink = json.metadata.selfLink;
-    
+
     this.items = [];
 
     for (var i=0; i< json.items.length; i++){
@@ -799,7 +799,7 @@ function LOGWINDOW(){
             if (e.metadata.selfLink.indexOf("Pod") > -1 ) {
                 item = new POD(e);
             }
-    
+
             if (e.metadata.selfLink.indexOf("Node") > -1 ) {
                 item = new NODE(e);
             }
@@ -809,7 +809,7 @@ function LOGWINDOW(){
             return;
         }
 
-        
+
 
         if (item.type === "Pod"){
             if (IsAlreadyShown(item)){
@@ -823,7 +823,7 @@ function LOGWINDOW(){
                  delete item.startTerminate;
             }
         }
-        
+
 
 
         var output = JSON.stringify(item,null,2);

@@ -94,7 +94,8 @@ function startDeployment(){
     $("#deploy-start").css('z-index', 1);
     $("#deploy-end").show();
     $("#deploy-end").css('z-index', 300);
-    deploymentAPI.Create(initGame,genericError);
+    //deploymentAPI.Create(initGame,genericError);
+    initGame();
     setReport("");
     $("#deployment").html("kubectl delete -f whack-a-pod-deployment.yaml")
 }
@@ -145,13 +146,13 @@ function getPods(){
 }
 
 function handlePods(e,b){
-    
+
     if (game.GetState() == "done") {
         return;
     }
 
     drawPods(e);
-    
+
 }
 
 function drawPods(pods){
@@ -239,14 +240,14 @@ function createNodeUI(name){
     var $holder = $("#nodes");
     $div.appendTo("#nodes")
     $killbtn = $("#kill-" + id)
-    
+
     if(name=="minikube"){
         $killbtn.hide();
     } else{
         $killbtn.click(killNode);
         $killbtn.data("node", name);
     }
-    
+
 }
 
 function killNode(e){
@@ -276,7 +277,7 @@ function handlePodsError(e){
     } else{
         console.log("Error getting pods:", e);
     }
-    
+
 }
 
 function genericError(e){
