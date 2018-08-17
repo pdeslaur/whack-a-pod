@@ -163,7 +163,7 @@ type minimumDeployment struct {
 	Kind       string `json:"kind,omitempty"`
 	Metadata   struct {
 		Name string `json:"name,omitempty"`
-		Namespace string `json:"name,omitempty"`
+		Namespace string `json:"namespace,omitempty"`
 	} `json:"metadata,omitempty"`
 	Spec struct {
 		Replicas int `json:"replicas,omitempty"`
