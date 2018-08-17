@@ -17,7 +17,7 @@ limitations under the License.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>Whack a Pod!</title>
     <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900,900i|Source+Code+Pro:400,900" rel="stylesheet">
     <link href="assets/css/next.css" rel="stylesheet">
@@ -28,7 +28,7 @@ limitations under the License.
 <body>
     <div class="holder">
         <div class="report"></div>
-         
+
 
         <div class="pods-table">
             <table>
@@ -64,7 +64,7 @@ limitations under the License.
                     <th class="terminating">Already Hit.</th>
                 </tr>
             </table>
-        </div>    
+        </div>
         <div class="alert">
             <div class="msg"></div>
         </div>
@@ -85,47 +85,47 @@ limitations under the License.
             </table>
         </div>
         <div class="overlay overlay-report">
-            <p>We have a <a href="http://kubernetes.io/docs/user-guide/services/">Kubernetes service</a> 
-            that <a href="/api/color/index.php">returns a random color of green</a>.  You can see the color of this 
-            sign changing constantly because we constantly poll it. That's how 
-            we know Kubernetes is keeping the service up.</p> 
+            <p>We have a <a href="http://kubernetes.io/docs/user-guide/services/">Kubernetes service</a>
+            that <a href="/api/color/index.php">returns a random color of green</a>.  You can see the color of this
+            sign changing constantly because we constantly poll it. That's how
+            we know Kubernetes is keeping the service up.</p>
         </div>
         <div class="overlay overlay-pods">
-            <p>Each one of these moles represents an actual Kuberntes pod. When 
-            you whack them, you kill the pod. The goal is to try and knock down 
-            enough pods that you disrupt the service. <strong>Notice:</strong></p> 
-            
+            <p>Each one of these moles represents an actual Kuberntes pod. When
+            you whack them, you kill the pod. The goal is to try and knock down
+            enough pods that you disrupt the service. <strong>Notice:</strong></p>
+
             <ul>
                 <li>How fast Kubernetes pods come back up</li>
                 <li>How hard it is to disrupt the service.</li>
                 <li>How fast the service comes back up after you manage to disrupt it</li>
-            </ul>    
+            </ul>
         </div>
         <div class="overlay overlay-scoreboard">
-            <p>Scoring</a> 
+            <p>Scoring</a>
             <table>
                 <tr><th>Knock down pod:</th><td class="number">1</td><td>point</td></tr>
                 <tr><th>Disrupt service:</th><td class="number">100</td><td>points</td></tr>
             </table>
         </div>
-        
+
     </div>
-    
+
     <div id="start-modal" class="modal">
         <div class="modal-message">
             <h1>Welcome!</h1>
             <p>Push the button to deploy to Kubernetes.
             When ready, a whistle will blow, and then you'll get to knock down
-               Kubernetes pods. The pods are keeping your service up. 
-                
-            <p><strong>See if you can knock down enough of them to 
+               Kubernetes pods. The pods are keeping your service up.
+
+            <p><strong>See if you can knock down enough of them to
                 disrupt the service!</strong>
             </p>
             <button id="deploy-start">Click to deploy</button>
             <br /><br />
-            <code> 
+            <code>
                 kubectl create -f whack-a-pod-deployment.yaml
-            </code>    
+            </code>
 
         </div>
     </div>
@@ -137,12 +137,12 @@ limitations under the License.
                 <li>Killed <span class="totals" id="total-pods">0</span></li>
                 <li>Caused <span class="totals" id="total-knockdowns">0</span></li>
                 <li>For total of <span class="totals" id="total-score">0</span></li>
-            </ul>    
+            </ul>
             <button id="restart">Restart</button>
         </div>
-    </div> 
-    
+    </div>
+
     <pre><div id="logwindow"></div></pre>
-     <nav><a href="advanced.html">Advanced View</a></nav>          
+     <nav><a href="advanced.html">Advanced View</a></nav>
 </body>
 </html>
