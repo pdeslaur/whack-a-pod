@@ -11,26 +11,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: wap-ingress
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules:
-  - host: minikube.wap
-    http:
-      paths:
-      - path: /api/*
-        backend:
-          serviceName: api
-          servicePort: 8080
-      - path: /admin/*
-        backend:
-          serviceName: admin
-          servicePort: 8080
-      - path: /*
-        backend:
-          serviceName: game
-          servicePort: 8080
+FROM golang:1.10 as builder
+COPY main.go ./
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /main main.go
+
+FROM gcr.io/distroless/base
+COPY --from=builder /main .
+CMD ["./main"]
