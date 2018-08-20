@@ -1,0 +1,25 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: Build
+  dir: $_COMPONENT
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/whackapod-$_COMPONENT:$BUILD_ID', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  id: Push to Google Container Registry
+  args: ['push', 'gcr.io/$PROJECT_ID/whackapod-$_COMPONENT:$BUILD_ID']
+- name: gcr.io/philde-testing-2/crane
+  id: Retrieve the image digest
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - 'echo gcr.io/$PROJECT_ID/whackapod-$_COMPONENT@$(crane digest gcr.io/$PROJECT_ID/whackapod-$_COMPONENT:$BUILD_ID) > /workspace/image_name'
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Update Kubernetes deployment
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - '/builder/kubectl.bash set image deployment/$_COMPONENT-deployment $_COMPONENT=$(cat /workspace/image_name) --namespace=whack-a-pod'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
+images:
+- 'gcr.io/$PROJECT_ID/whackapod-$_COMPONENT:$BUILD_ID'
