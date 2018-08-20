@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -68,7 +70,7 @@ func colorComplete(w http.ResponseWriter, r *http.Request) {
 }
 
 func hexColorString() string {
-	// rand.Seed(time.Now().UnixNano())
-	// i := rand.Intn(16777215) // = 0xFFFFFF the highest hex color value allowed.
-	return "#00ff00" // + fmt.Sprintf("%06s", strconv.FormatInt(int64(i), 16))
+	rand.Seed(time.Now().UnixNano())
+	i := rand.Intn(16777215) // = 0xFFFFFF the highest hex color value allowed.
+	return "#" + fmt.Sprintf("%06s", strconv.FormatInt(int64(i), 16))
 }
