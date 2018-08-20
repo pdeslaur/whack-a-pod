@@ -34,72 +34,7 @@ limitations under the License.
         </div>
         <button class="action" id="deploy-start">Click to start</button>
         <button id="deploy-end">Click to stop</button>
-        <code id="deployment">
-            kubectl create -f whack-a-pod-deployment.yaml
-        </code>
         <div id="nodes"></div>
-        <button class="text-reveal" id="show-pod-yaml">View Deployment Yaml</button>
-        <button class="text-reveal" id="show-service-yaml">View Service Yaml</button>
     </div>
-
-    <div id="pod-yaml" class="modal">
-        <div class="modal-message">
-        <button class="small" id="close-pod-modal">X</button>
-<h1>Deployment Configuration</h1>
-<code><pre>
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-    name: api-deployment
-spec:
-    replicas: 12
-    strategy:
-        type: RollingUpdate
-    template:
-        metadata:
-            labels:
-                app: api
-        spec:
-            containers:
-            - name: "api"
-              image: "gcr.io/projectid/api"
-              ports:
-              - name: "http"
-                containerPort: 8080
-                protocol: TCP
-</pre></code>
-
-        </div>
-    </div>
-
-    <div id="service-yaml" class="modal">
-            <div class="modal-message">
-            <button class="small" id="close-service-modal">X</button>
-    <h1>Service Configuration</h1>
-    <code><pre>
-apiVersion: v1
-kind: Service
-metadata:
-    labels:
-        name: api
-    name: api
-spec:
-    type: LoadBalancer
-    loadBalancerIP: 35.198.214.114
-    ports:
-    - name: "http"
-        port: 80
-        targetPort: 8080
-        protocol: TCP
-    selector:
-        app: api
-    </pre></code>
-
-            </div>
-        </div>
-
-
-    <pre><div id="logwindow"></div></pre>
-    <nav><a href="next.html">Back to Game</a></nav>
 </body>
 </html>
