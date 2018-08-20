@@ -11,7 +11,7 @@ import (
 )
 
 var srv = http.Server{
-	ReadTimeout:  5 * time.Second,
+	ReadTimeout:  6 * time.Second,
 	WriteTimeout: 10 * time.Second,
 	Addr:         ":8080",
 	Handler:      handler(),
