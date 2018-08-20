@@ -1,6 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   id: Build
+  dir: admin
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/whackapod-admin:$BUILD_ID', '.']
 - name: 'gcr.io/cloud-builders/docker'
   id: Push to Google Container Registry
