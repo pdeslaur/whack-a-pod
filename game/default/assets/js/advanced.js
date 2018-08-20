@@ -67,7 +67,7 @@ function setReport(msg, color){
     if (typeof color == "undefined") color = "#333333";
     var report = $(".report");
 
-    report.css("-webkit-filter", "drop-shadow(2px 2px 3px " + color + ")");
+    report.css("-webkit-filter", "drop-shadow(0px 0px 15px " + color + ")");
     report.css("color", color);
     var msgholder = $("#report_message");
     if (msgholder.length == 0){
