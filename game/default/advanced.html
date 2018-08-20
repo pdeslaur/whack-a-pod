@@ -17,7 +17,7 @@ limitations under the License.
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>Whack a Pod!</title>
     <link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900,900i|Source+Code+Pro:400,900" rel="stylesheet">
     <link href="assets/css/next.css" rel="stylesheet">
@@ -32,20 +32,20 @@ limitations under the License.
             <div class="report"></div>
             <div class="kube-label" id="kube-service">Service</div>
         </div>
-        <button class="action" id="deploy-start">Click to deploy</button> 
-        <button id="deploy-end">Click to stop</button>  
+        <button class="action" id="deploy-start">Click to deploy</button>
+        <button id="deploy-end">Click to stop</button>
         <code id="deployment">
             kubectl create -f whack-a-pod-deployment.yaml
-        </code>  
+        </code>
         <div id="nodes"></div>
-        <button class="text-reveal" id="show-pod-yaml">View Deployment Yaml</button> 
-        <button class="text-reveal" id="show-service-yaml">View Service Yaml</button> 
+        <button class="text-reveal" id="show-pod-yaml">View Deployment Yaml</button>
+        <button class="text-reveal" id="show-service-yaml">View Service Yaml</button>
     </div>
-
+<!--
     <div id="pod-yaml" class="modal">
         <div class="modal-message">
         <button class="small" id="close-pod-modal">X</button>
-<h1>Deployment Configuration</h1>        
+<h1>Deployment Configuration</h1>
 <code><pre>
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -75,7 +75,7 @@ spec:
     <div id="service-yaml" class="modal">
             <div class="modal-message">
             <button class="small" id="close-service-modal">X</button>
-    <h1>Service Configuration</h1>        
+    <h1>Service Configuration</h1>
     <code><pre>
 apiVersion: v1
 kind: Service
@@ -94,12 +94,13 @@ spec:
     selector:
         app: api
     </pre></code>
-    
+
             </div>
         </div>
-    
-    
-    <pre><div id="logwindow"></div></pre>  
-    <nav><a href="next.html">Back to Game</a></nav>    
+
+
+    <pre><div id="logwindow"></div></pre>
+    <nav><a href="next.html">Back to Game</a></nav>
+     -->
 </body>
 </html>
