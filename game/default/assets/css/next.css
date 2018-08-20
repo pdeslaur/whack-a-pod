@@ -21,8 +21,7 @@ body{
 
 .holder{
     padding-top: 250px;
-    width: 100%;
-    /* width: 60%; */
+    width: 60%;
     margin: 50px 0 5px 0;
     background-size: cover;
     position: relative;
