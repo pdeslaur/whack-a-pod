@@ -20,7 +20,7 @@ body{
 }
 .holder{
     padding-top: 250px;
-    width: 1200px;
+    width: 100%;
     margin: 180px auto 5px auto;
     background: url("holder_background.png");
     background-size: cover;
@@ -152,7 +152,7 @@ body{
     right:0;
     width: 60%;
     font-size: 2rem;
-}    
+}
 
 .alert{
     position: absolute;
@@ -176,7 +176,7 @@ body{
 .alert .msg{
     position: absolute;
     top: 180px;
-    margin: 0 140px 0 140px; 
+    margin: 0 140px 0 140px;
 }
 
 .overlay{
@@ -224,7 +224,7 @@ body{
     position: absolute;
     width: 620px;
     right: 20px;
-    top: 110px; 
+    top: 110px;
 
 }
 
