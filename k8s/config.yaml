@@ -30,7 +30,7 @@ subjects:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: admin
+  name: admin-deployment
   labels:
     app: admin
   namespace: whack-a-pod
@@ -81,7 +81,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: game
+  name: game-deployment
   labels:
     app: game
   namespace: whack-a-pod
