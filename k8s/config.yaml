@@ -35,7 +35,7 @@ metadata:
     app: admin
   namespace: wap-gcb
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: admin
@@ -48,6 +48,7 @@ spec:
       containers:
       - name: admin
         image: gcr.io/dockyard-ui-demo/whackapod-admin@sha256:704082a5934c81fee4db42ffd949af5d5bfdab991bbd1a532cd493bb5f10b404
+        imagePullPolicy: IfNotPresent
         env:
         - name: APIIMAGE
           value: gcr.io/dockyard-ui-demo/whackapod-api@sha256:52e1c6700f79167f96c4dd37496fef56cc02f8f865ce4d489b3c4d68d22a3124
@@ -96,7 +97,8 @@ spec:
     spec:
       containers:
       - name: game
-        image: gcr.io/dockyard-ui-demo/whackapod-game@sha256:e718deeeabe2525b563e7dda80ed28491a11756842e387e7de7a0ad4794d769e
+        image: gcr.io/dockyard-ui-demo/whackapod-game@sha256:4ba4c7dca2181e59d79711681bba98207a88cc71f8580bdbe229128863973ee2
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /healthz
@@ -132,7 +134,7 @@ metadata:
     app: api
   namespace: wap-gcb
 spec:
-  replicas: 30
+  replicas: 60
   strategy:
       type: RollingUpdate
   selector:
@@ -146,6 +148,7 @@ spec:
       containers:
       - name: api
         image: gcr.io/dockyard-ui-demo/whackapod-api@sha256:52e1c6700f79167f96c4dd37496fef56cc02f8f865ce4d489b3c4d68d22a3124
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /healthz

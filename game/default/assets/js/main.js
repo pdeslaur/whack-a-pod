@@ -62,6 +62,7 @@ function showTotals(){
 }
 
 function startDeployment(){
+    initGame();
     //deploymentAPI.Create(initGame,genericError);
     hideModal("#start-modal");
     setReport("Kubernetes starting up.");
