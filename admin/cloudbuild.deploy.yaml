@@ -17,7 +17,7 @@ steps:
   entrypoint: '/bin/sh'
   args:
   - '-c'
-  - '/builder/kubectl.bash set image deployment/hello-world hello-world=$(cat /workspace/image_name)'
+  - '/builder/kubectl.bash set image deployment/game-deployment game=$(cat /workspace/image_name) --namespace=whack-a-pod'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
