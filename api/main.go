@@ -70,5 +70,5 @@ func colorComplete(w http.ResponseWriter, r *http.Request) {
 func hexColorString() string {
 	// rand.Seed(time.Now().UnixNano())
 	// i := rand.Intn(16777215) // = 0xFFFFFF the highest hex color value allowed.
-	return "#0000FF" // + fmt.Sprintf("%06s", strconv.FormatInt(int64(i), 16))
+	return "#0F00FF" // + fmt.Sprintf("%06s", strconv.FormatInt(int64(i), 16))
 }
