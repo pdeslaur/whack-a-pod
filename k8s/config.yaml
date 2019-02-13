@@ -47,11 +47,11 @@ spec:
       serviceAccountName: wap-admin-serviceaccount
       containers:
       - name: admin
-        image: gcr.io/dockyard-ui-demo/whackapod-admin:0.0.1
+        image: gcr.io/philde-testing-2/whackapod-admin:0.0.1
         imagePullPolicy: IfNotPresent
         env:
         - name: APIIMAGE
-          value: gcr.io/dockyard-ui-demo/whackapod-api:0.0.1
+          value: gcr.io/philde-testing-2/whackapod-api:0.0.1
         livenessProbe:
           httpGet:
             path: /healthz
@@ -97,7 +97,7 @@ spec:
     spec:
       containers:
       - name: game
-        image: gcr.io/dockyard-ui-demo/whackapod-game:0.0.1
+        image: gcr.io/philde-testing-2/whackapod-game:0.0.1
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
@@ -150,7 +150,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: gcr.io/dockyard-ui-demo/whackapod-api:0.0.1
+        image: gcr.io/philde-testing-2/whackapod-api:0.0.1
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
